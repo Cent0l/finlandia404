@@ -1,3 +1,4 @@
+/* === Ogólne ustawienia === */
 body {
   background-color: black;
   color: #29FE1A;
@@ -7,6 +8,7 @@ body {
   line-height: 1.6;
 }
 
+/* === Nagłówek === */
 header {
   background-color: #111;
   padding: 30px;
@@ -18,11 +20,6 @@ header h1 {
   margin: 0;
   font-size: 3em;
   text-shadow: 0 0 10px #29FE1A;
-}
-
-header p {
-  margin: 5px 0;
-  font-size: 1.2em;
 }
 
 nav ul {
@@ -49,6 +46,7 @@ nav a:hover {
   color: black;
 }
 
+/* === Układ główny strony === */
 .main-layout {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -56,6 +54,7 @@ nav a:hover {
   padding: 30px;
 }
 
+/* === Blok obrazków (jeśli dotyczy) === */
 .image-box {
   display: flex;
   flex-direction: column;
@@ -71,6 +70,7 @@ nav a:hover {
   box-shadow: 0 0 10px #29FE1A;
 }
 
+/* === Sekcje tekstowe === */
 main section {
   padding-right: 20px;
 }
@@ -82,6 +82,7 @@ h2 {
   text-shadow: 0 0 5px #29FE1A;
 }
 
+/* === Obrazki w treści === */
 .img-inline {
   float: right;
   margin-left: 25px;
@@ -92,6 +93,7 @@ h2 {
   box-shadow: 0 0 10px #29FE1A;
 }
 
+/* === Stopka === */
 footer {
   background-color: #111;
   text-align: center;
@@ -100,9 +102,39 @@ footer {
   font-size: 0.9em;
 }
 
+/* === Układ dla event.html === */
+.event-wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.event-image {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 2px solid #29FE1A;
+  box-shadow: 0 0 10px #29FE1A;
+}
+
+.event-text {
+  flex: 1;
+  max-width: 1000px;
+  line-height: 1.7;
+}
+
+/* === Responsywność === */
 @media (max-width: 768px) {
   .main-layout {
     grid-template-columns: 1fr;
+  }
+
+  .image-box {
+    align-items: center;
   }
 
   .img-inline {
@@ -111,7 +143,13 @@ footer {
     margin: 20px auto;
   }
 
-  .image-box {
+  .event-wrapper {
+    flex-direction: column;
     align-items: center;
+  }
+
+  .event-text {
+    padding: 0 20px;
+    text-align: center;
   }
 }
